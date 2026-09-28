@@ -1,0 +1,97 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 05</title>
+
+    <style>
+        #espacio {
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        #objeto {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            left: 275px;
+            top: 275px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Ejercicio 05</h2>
+
+    <button onclick="mover('arriba')">↑ Arriba</button>
+    <br>
+
+    <button onclick="mover('izquierda')">← Izquierda</button>
+
+    <button onclick="mover('derecha')">→ Derecha</button>
+
+    <br>
+    <button onclick="mover('abajo')">↓ Abajo</button>
+
+    <br><br>
+
+    <div id="espacio">
+        <div id="objeto"></div>
+    </div>
+
+    <script>
+
+        let x = 275;
+        let y = 275;
+
+        function mover(direccion) {
+
+            let paso = 20;
+
+            if (direccion == "derecha") {
+                x = x + paso;
+            }
+
+            if (direccion == "izquierda") {
+                x = x - paso;
+            }
+
+            if (direccion == "arriba") {
+                y = y - paso;
+            }
+
+            if (direccion == "abajo") {
+                y = y + paso;
+            }
+
+            // Evitar que salga del espacio 600x600
+            if (x < 0) {
+                x = 0;
+            }
+
+            if (x > 550) {
+                x = 550;
+            }
+
+            if (y < 0) {
+                y = 0;
+            }
+
+            if (y > 550) {
+                y = 550;
+            }
+
+            document.getElementById("objeto").style.left = x + "px";
+            document.getElementById("objeto").style.top = y + "px";
+        }
+
+    </script>
+
+</body>
+</html>
+

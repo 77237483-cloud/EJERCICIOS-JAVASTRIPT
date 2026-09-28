@@ -1,0 +1,48 @@
+html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 01</title>
+</head>
+<body>
+
+    <h2>Ejercicio 01</h2>
+
+    <label>Nro1:</label>
+    <input type="number" id="nro1">
+
+    <br><br>
+
+    <label>Nro2:</label>
+    <input type="number" id="nro2">
+
+    <br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <p>Suma: <span id="suma"></span></p>
+    <p>Resta: <span id="resta"></span></p>
+    <p>Multiplicación: <span id="multiplicacion"></span></p>
+    <p>División: <span id="division"></span></p>
+
+    <script>
+        function calcular() {
+            let nro1 = parseFloat(document.getElementById("nro1").value);
+            let nro2 = parseFloat(document.getElementById("nro2").value);
+
+            document.getElementById("suma").innerHTML = nro1 + nro2;
+            document.getElementById("resta").innerHTML = nro1 - nro2;
+            document.getElementById("multiplicacion").innerHTML = nro1 * nro2;
+
+            if (nro2 != 0) {
+                document.getElementById("division").innerHTML = nro1 / nro2;
+            } else {
+                document.getElementById("division").innerHTML = "No se puede dividir entre cero";
+            }
+        }
+    </script>
+
+</body>
+</html>
+

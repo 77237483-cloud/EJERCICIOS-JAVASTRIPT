@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 02</title>
+</head>
+<body>
+
+    <h2>Ejercicio 02</h2>
+
+    <label>Ancho:</label>
+    <input type="number" id="ancho">
+
+    <br><br>
+
+    <label>Largo:</label>
+    <input type="number" id="largo">
+
+    <br><br>
+
+    <button onclick="cambiarTamano()">Mostrar imagen</button>
+
+    <figure>
+        <img id="imagen" src="https://picsum.photos/300/200" alt="Imagen">
+    </figure>
+
+    <script>
+        function cambiarTamano() {
+
+            let ancho = document.getElementById("ancho").value;
+            let largo = document.getElementById("largo").value;
+
+            let imagen = document.getElementById("imagen");
+
+            imagen.style.width = ancho + "px";
+            imagen.style.height = largo + "px";
+        }
+    </script>
+
+</body>
+</html>
+
