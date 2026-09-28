@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberQuiz - Seguridad Informática</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <!-- =========================
+             ENCABEZADO
+        ========================== -->
+
+        <header class="encabezado">
+
+            <div class="logo">
+                🛡️
+            </div>
+
+            <div>
+                <h1>CyberQuiz</h1>
+                <p>
+                    Pon a prueba tus conocimientos
+                    sobre seguridad informática
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PANTALLA INICIAL
+        ========================== -->
+
+        <section
+            id="pantallaInicio"
+            class="pantalla activa"
+        >
+
+            <h2>Bienvenido al reto</h2>
+
+            <p class="texto-intro">
+                Responde correctamente las preguntas
+                de ciberseguridad, acumula puntos
+                y protege tus vidas.
+            </p>
+
+
+            <div class="reglas">
+
+                <article>
+                    <span>🎯</span>
+
+                    <div>
+                        <h3>10 puntos</h3>
+                        <p>Por cada respuesta correcta</p>
+                    </div>
+                </article>
+
+
+                <article>
+                    <span>❤️</span>
+
+                    <div>
+                        <h3>3 vidas</h3>
+                        <p>Pierdes una al equivocarte</p>
+                    </div>
+                </article>
+
+
+                <article>
+                    <span>🏆</span>
+
+                    <div>
+                        <h3>Puntaje final</h3>
+                        <p>Se mostrará al terminar</p>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- FILTRO -->
+
+            <div class="selector">
+
+                <label for="categoria">
+                    Selecciona una categoría
+                </label>
+
+                <select id="categoria">
+
+                    <option value="todas">
+                        Todas las categorías
+                    </option>
+
+                    <option value="phishing">
+                        Phishing
+                    </option>
+
+                    <option value="contrasenas">
+                        Contraseñas
+                    </option>
+
+                    <option value="malware">
+                        Malware
+                    </option>
+
+                    <option value="redes">
+                        Redes y navegación
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                id="btnComenzar"
+                class="boton-principal"
+            >
+                Comenzar Quiz
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             PANTALLA DEL JUEGO
+        ========================== -->
+
+        <section
+            id="pantallaJuego"
+            class="pantalla"
+        >
+
+            <!-- INFORMACIÓN -->
+
+            <div class="barra-info">
+
+                <div class="dato">
+                    <span>⭐</span>
+
+                    <div>
+                        <small>Puntos</small>
+                        <strong id="puntos">0</strong>
+                    </div>
+                </div>
+
+
+                <div class="dato">
+                    <span>❤️</span>
+
+                    <div>
+                        <small>Vidas</small>
+                        <strong id="vidas">3</strong>
+                    </div>
+                </div>
+
+
+                <div class="dato">
+                    <span>❓</span>
+
+                    <div>
+                        <small>Pregunta</small>
+
+                        <strong>
+                            <span id="numeroPregunta">1</span>
+                            /
+                            <span id="totalPreguntas">10</span>
+                        </strong>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- BARRA DE PROGRESO -->
+
+            <div class="barra-progreso">
+
+                <div
+                    id="progreso"
+                    class="progreso"
+                ></div>
+
+            </div>
+
+
+            <!-- PREGUNTA -->
+
+            <article class="tarjeta-pregunta">
+
+                <span
+                    id="categoriaPregunta"
+                    class="categoria-pregunta"
+                >
+                    Seguridad
+                </span>
+
+                <h2 id="pregunta">
+                    Pregunta
+                </h2>
+
+
+                <div
+                    id="opciones"
+                    class="opciones"
+                >
+                    <!-- JS genera los botones -->
+                </div>
+
+
+                <p
+                    id="mensaje"
+                    class="mensaje"
+                ></p>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             RESULTADO
+        ========================== -->
+
+        <section
+            id="pantallaResultado"
+            class="pantalla resultado"
+        >
+
+            <div class="trofeo">
+                🏆
+            </div>
+
+            <h2>¡Quiz terminado!</h2>
+
+            <p>
+                Este fue tu resultado:
+            </p>
+
+
+            <div class="resultado-puntos">
+
+                <span id="puntajeFinal">
+                    0
+                </span>
+
+                <small>
+                    puntos
+                </small>
+
+            </div>
+
+
+            <div class="estadisticas">
+
+                <article>
+
+                    <strong id="correctasFinal">
+                        0
+                    </strong>
+
+                    <span>
+                        Correctas
+                    </span>
+
+                </article>
+
+
+                <article>
+
+                    <strong id="incorrectasFinal">
+                        0
+                    </strong>
+
+                    <span>
+                        Incorrectas
+                    </span>
+
+                </article>
+
+
+                <article>
+
+                    <strong id="vidasFinal">
+                        0
+                    </strong>
+
+                    <span>
+                        Vidas
+                    </span>
+
+                </article>
+
+            </div>
+
+
+            <p
+                id="mensajeFinal"
+                class="mensaje-final"
+            >
+            </p>
+
+
+            <button
+                id="btnReiniciar"
+                class="boton-principal"
+            >
+                Jugar nuevamente
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            CyberQuiz - Proyecto de Ingeniería Web 2026
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
